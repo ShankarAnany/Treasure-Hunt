@@ -1,0 +1,106 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "Resource",
+"class": "collectible_settings",
+"language": "GDScript",
+"path": "res://Collectibles/Collectibles_Settings.gd"
+}, {
+"base": "Resource",
+"class": "enemy_settings",
+"language": "GDScript",
+"path": "res://Enemies/Enemy_Settings.gd"
+}, {
+"base": "Resource",
+"class": "player_settings",
+"language": "GDScript",
+"path": "res://Player/Player_Settings.gd"
+} ]
+_global_script_class_icons={
+"Player": "",
+"collectible_settings": "",
+"enemy_settings": "",
+"player_settings": ""
+}
+
+[application]
+
+config/name="Treasure Hunt"
+run/main_scene="res://Levels/Level 1.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+SoundPlayer="*res://Sounds/SoundPlayer.tscn"
+Events="*res://World/events.gd"
+SceneTransition="*res://World/SceneTransition.tscn"
+
+[display]
+
+window/size/width=320
+window/size/height=256
+window/size/test_width=640
+window/size/test_height=512
+window/stretch/mode="2d"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
+
+[global]
+
+physics=false
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Characters"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

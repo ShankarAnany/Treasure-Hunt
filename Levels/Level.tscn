@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://World/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Rapscallion-q341.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 21
+font_data = ExtResource( 5 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+
+[node name="Label" type="Label" parent="Background"]
+margin_left = 144.0
+margin_top = 16.0
+margin_right = 176.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+autowrap = true
+uppercase = true
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 213, -57 )
+z_index = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 11, -67 )
+current = true
+limit_left = 0
+limit_top = -300
+limit_right = 1119
+limit_bottom = 256
+limit_smoothed = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -196573, 0, 4, -65537, 0, 4, -131037, 0, 65540, -1, 0, 65540, -65501, 0, 65540, 65535, 0, 65540, 35, 0, 65540, 131071, 0, 65540, 65571, 0, 65540, 196607, 0, 65540, 131107, 0, 65540, 262143, 0, 65540, 196643, 0, 65540, 327679, 0, 65540, 262179, 0, 65540, 393215, 0, 65540, 327715, 0, 65540, 458751, 0, 65540, 393251, 0, 65540, 524287, 0, 65540, 458787, 0, 65540, 589823, 0, 262159, 524288, 0, 262145, 524289, 0, 262145, 524290, 0, 262145, 524291, 0, 262145, 524292, 0, 262145, 524293, 0, 262145, 524294, 0, 262145, 524295, 0, 262145, 524296, 0, 262145, 524297, 0, 262145, 524298, 0, 262145, 524299, 0, 262145, 524300, 0, 262145, 524301, 0, 262145, 524302, 0, 262145, 524303, 0, 262145, 524304, 0, 262145, 524305, 0, 262145, 524306, 0, 262145, 524307, 0, 262145, 524308, 0, 262145, 524309, 0, 262145, 524310, 0, 262145, 524311, 0, 262145, 524312, 0, 262145, 524313, 0, 262145, 524314, 0, 262145, 524315, 0, 262145, 524316, 0, 262145, 524317, 0, 262145, 524318, 0, 262145, 524319, 0, 262145, 524320, 0, 262145, 524321, 0, 262145, 524322, 0, 262145, 524323, 0, 262160 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Collectibles" type="Node2D" parent="."]

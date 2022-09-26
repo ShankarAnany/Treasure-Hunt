@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sounds/music.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/SoundPlayer.gd" type="Script" id=2]
+
+[node name="SoundPlayer" type="Node"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="AudioPLayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPLayers"]
+bus = "Sound"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPLayers"]
+bus = "Sound"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPLayers"]
+bus = "Sound"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Music"
+
+[connection signal="finished" from="MusicPlayer" to="." method="_on_MusicPlayer_finished"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Player/Player_Settings.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+grav = 240
+fall_grav = 480
+speed_x = 100
+acc = 900
+fric = 720
+jump_max = -180
+jump_min = -70
+extra_jumps = 1
