@@ -1,5 +1,6 @@
 # Treasure-Hunt
 This is my first Godot Project
+This is not a complete game, just 2 levels and basic platformer physics which I have made to get familiar with godot
 
 # How To Open
 Open project.godot in Godot (3.5) 
